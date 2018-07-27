@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
 	  private User findUserbyUername(String username) {
 	    if(username.equalsIgnoreCase("admin")) {
-	      return new User(username, "admin123", "ADMIN");
+	      return new User(username, "admin123", "USER");
 	    }
 	    return null;
 	  }
