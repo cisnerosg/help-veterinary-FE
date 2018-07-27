@@ -10,11 +10,31 @@
                 </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+            	<ul sec:authorize="!isAuthenticated()" style="display: inline-block;" class="nav navbar-nav">
+                	<li class="active">
+                        <a th:href="@{/registration}">Registrame</a>
+                    </li>
+                </ul>
+                <ul sec:authorize="isAuthenticated()" style="display: inline-block;" class="nav navbar-nav">
                     <li class="active">
                         <a th:href="@{/}">Home</a>
                     </li>
+                    <li class="active">
+                        <a th:href="@{/consultation}">Nueva Consulta</a>
+                    </li>
+                    <li class="active">
+                        <a th:href="@{/consultations}">Consultas</a>
+                    </li>
+                    <li class="active">
+                        <a th:href="@{/histories}">Historiales</a>
+                    </li>
+                    <li class="active">
+                        <a th:href="@{/pets}">Mascotas</a>
+                    </li>
                 </ul>
+                <ul sec:authorize="isAuthenticated()" style="display: inline-block;" class="nav navbar-nav navbar-right">
+      				<li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+    			</ul>
             </div>
         </div>
     </nav>

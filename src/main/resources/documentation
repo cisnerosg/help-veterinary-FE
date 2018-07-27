@@ -1,0 +1,33 @@
+
+veterinaria
+
+nombre veterinaria:
+nombre responsable:
+
+sucursales
+responsable sucursal
+direccion:
+    -calle
+    -nro
+    -cp
+    -partido
+    -localidad
+    -provincia
+
+
+particular
+    nombre
+    direccion
+
+
+
+consulta
+
+veterinario
+fecha
+hora
+diagnostico
+observaciones
+realizar:
+
+proxima visita
