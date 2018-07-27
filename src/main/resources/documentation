@@ -5,15 +5,13 @@ nombre veterinaria:
 nombre responsable:
 
 sucursales
-responsable sucursal
+nombre sucursal
 direccion:
     -calle
     -nro
-    -cp
     -partido
     -localidad
     -provincia
-
 
 particular
     nombre
@@ -31,3 +29,12 @@ observaciones
 realizar:
 
 proxima visita
+
+
+profesionales
+
+nombre
+
+
+
+
