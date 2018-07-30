@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.helpVeterinary.fe.model.Rol;
 import com.helpVeterinary.fe.model.User;
 
 public class UserDetailsServiceImpl implements UserDetailsService{
@@ -20,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	    if (user != null) {
 	      builder = org.springframework.security.core.userdetails.User.withUsername(username);
 	      builder.password(new BCryptPasswordEncoder().encode(user.getPassword()));
-	      builder.roles(user.getRoles());
+	      builder.roles(user.getRol().getDescription());
 	    } else {
 	      throw new UsernameNotFoundException("User not found.");
 	    }
@@ -30,7 +31,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
 	  private User findUserbyUername(String username) {
 	    if(username.equalsIgnoreCase("admin")) {
-	      return new User(username, "admin123", "USER");
+	      return new User(username, "admin123",Rol.ADMIN);
 	    }
 	    return null;
 	  }
